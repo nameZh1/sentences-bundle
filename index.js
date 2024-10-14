@@ -13,7 +13,7 @@ app.get('/getCategories', (req, res) => {
 });
 
 // 根据传参获取一言
-app.get('/getPower', (req, res) => {
+app.get('', (req, res) => {
     const { id = '1,2,3,4,5,6,7,8,9,10,11,12' } = req.query;
     const ids = id.split(',')
 
