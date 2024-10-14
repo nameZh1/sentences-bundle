@@ -1,4 +1,5 @@
 const express = require('express');
+const os = require('os'); // 导入 os 模块
 const app = express();
 const port = 3000;
 
@@ -32,7 +33,22 @@ app.get('/getPower', (req, res) => {
     res.json({ result });
 });
 
+// 获取本机IP地址
+function getLocalIP() {
+    const interfaces = os.networkInterfaces();
+    for (let name in interfaces) {
+        for (let iface of interfaces[name]) {
+            if (iface.family === 'IPv4' && !iface.internal) {
+                return iface.address;
+            }
+        }
+    }
+}
+
+const localIP = getLocalIP();
+
 app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+    console.log(`Localhost running at http://localhost:${port}`);
+    console.log(`Server running at http://${localIP}:${port}`);
 });
 
