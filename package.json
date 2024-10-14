@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "dev": "node index.js --open"
+  },
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
