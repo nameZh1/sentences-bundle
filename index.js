@@ -1,7 +1,11 @@
 const express = require('express');
 const os = require('os'); // 导入 os 模块
+const cors = require('cors');
 const app = express();
 const port = 3000;
+
+// 使用 cors 中间件，允许所有来源
+app.use(cors());
 
 const version = require('./version.json')
 const categories = require(version.categories.path)
@@ -13,17 +17,16 @@ app.get('/getCategories', (req, res) => {
 });
 
 // 根据传参获取一言
-app.get('/getPower', (req, res) => {
+app.get('', (req, res) => {
     const { id = '1,2,3,4,5,6,7,8,9,10,11,12' } = req.query;
     const ids = id.split(',')
 
     //随机类别
     const randomIndex = Math.floor(Math.random() * ids.length)
-    const randomId = ids[randomIndex]
-    const randomCategories = categories
+    const randomId = ids[randomIndex] - 1
 
     // 随机内容
-    const power = require(randomCategories[randomId].path)
+    const power = require(categories[randomId].path)
     const randomPowerIndex = Math.floor(Math.random() * power.length)
     const randomPower = power[randomPowerIndex]
 
