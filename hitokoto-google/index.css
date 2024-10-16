@@ -1,8 +1,8 @@
 /* 一言样式 */
 #daily-quote {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    top: 20px;
+    left: 20px;
     background: rgba(0, 0, 0, 0.7);
     color: white;
     padding: 15px;
