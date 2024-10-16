@@ -12,7 +12,31 @@
     z-index: 9999;
     max-width: 300px;
     text-align: center;
+    opacity: 0.8;
+    cursor: pointer;
+    /* animation-name: test; */
+    /* animation-duration: 4s; */
+    /* animation-timing-function: linear; */
+    /* animation-iteration-count: 4; */
+    /* animation-direction: alternate; */
+    /* animation-fill-mode: backwards; */
+    /* animation-delay: 2s; */
+    animation: myAni 2s linear;
 }
+#daily-quote:hover {
+    opacity: 1;
+}
+
+@keyframes myAni {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.8;
+    }
+}
+
 
 #daily-quote p {
     margin: 0;

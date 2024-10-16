@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     });
 
-    // 点击保存按钮时存储选中的类别
+    // 点击保存按钮时存储配置
     saveButton.addEventListener('click', () => {
         const selectedCategories = [];
         const checkboxes = document.querySelectorAll('#categories input[type="checkbox"]');
@@ -60,6 +60,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         // 存储用户选择的多个类别ID
         chrome.storage.sync.set({ selectedCategoryIds: selectedCategories }, () => {
             console.log('Selected categories saved:', selectedCategories);
+        });
+
+        // 存储速度
+        const speed = document.getElementById('speed').value
+        chrome.storage.sync.set({ speed: speed }, () => {
+            console.log('speed saved:', speed);
         });
 
         // 关闭弹窗
