@@ -5,16 +5,19 @@ body {
     background: rgba(0, 0, 0, 0.7);
     text-align: center;
 }
+
 h1 {
     font-size: 20px;
     color: #fff;
 }
+
 label {
     display: block;
     margin: 10px 0 5px;
     font-size: 14px;
     color: #fff;
 }
+
 input[type="text"] {
     width: 100%;
     padding: 8px;
@@ -23,6 +26,7 @@ input[type="text"] {
     border-radius: 4px;
     box-sizing: border-box;
 }
+
 #save {
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
@@ -34,9 +38,11 @@ input[type="text"] {
     margin-bottom: 20px;
     text-align: center;
 }
+
 #save:hover {
     background-color: rgba(0, 0, 0, 0.7);
 }
+
 #categories {
     width: 100px;
     margin-bottom: 15px;
@@ -48,10 +54,10 @@ input[type="text"] {
     text-align: left;
 
 }
+
 #categories label {
     display: inline-block;
 }
-
 
 #speeds {
     text-align: left;

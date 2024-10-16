@@ -46,6 +46,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     });
 
+    chrome.storage.sync.get('speed', (result) => {
+        const localSpeed = result.speed || 10;
+        const speedEle = document.getElementById('speed')
+        speedEle.value = localSpeed
+    });
+
     // 点击保存按钮时存储配置
     saveButton.addEventListener('click', () => {
         const selectedCategories = [];

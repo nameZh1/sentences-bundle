@@ -1,4 +1,8 @@
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    // chrome.storage.sync.get('speed', (result) => {
+    //     alert(result.speed)
+    // })
+
     if (request.action === 'fetchQuote') {
         const categoryIds = request.categoryIds; // 获取传递的 categoryIds
         const apiUrl = "http://localhost:3000/"; // 假设你有一个API服务

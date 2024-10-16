@@ -23,6 +23,30 @@
     /* animation-delay: 2s; */
     animation: myAni 2s linear;
 }
+
+/* #daily-quote::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #cccccc46;
+    border-radius: 8px;
+    cursor: pointer;
+    animation: jindu 10s linear;
+} */
+
+@keyframes jindu {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
 #daily-quote:hover {
     opacity: 1;
 }
@@ -48,4 +72,27 @@
     margin-top: 10px;
     font-size: 14px;
     color: #ccc;
+}
+
+#loading {
+    width: 10px;
+    height: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    /* 外圈淡色 */
+    border-top-color: #c2c0c073;
+    /* 旋转的部分颜色 */
+    border-radius: 50%;
+    animation: spin 10s linear;
+    /* 旋转动画 */
+}
+
+/* 旋转动画定义 */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
