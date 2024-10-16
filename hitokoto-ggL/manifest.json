@@ -1,0 +1,63 @@
+{
+  "manifest_version": 3,
+  "name": "Daily Floating Quote",
+  "version": "1.1",
+  "description": "Adds a daily floating motivational quote to the Google new tab page.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "/popup/popup.html",
+    "default_icon": {
+      "16": "/images/icon16.png",
+      "48": "/images/icon48.png",
+      "128": "/images/icon128.png"
+    },
+    "default_title": "zh1"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "index.css"
+      ]
+    }
+  ],
+  "content_security_policy": {
+    "script-src": "'self' 'wasm-unsafe-eval'; object-src 'self'"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "localApi/categories.json",
+        "localApi/version.json",
+        "localApi/sentences/a.json",
+        "localApi/sentences/b.json",
+        "localApi/sentences/c.json",
+        "localApi/sentences/d.json",
+        "localApi/sentences/e.json",
+        "localApi/sentences/f.json",
+        "localApi/sentences/g.json",
+        "localApi/sentences/h.json",
+        "localApi/sentences/i.json",
+        "localApi/sentences/j.json",
+        "localApi/sentences/k.json",
+        "localApi/sentences/l.json"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}
